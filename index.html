@@ -10,31 +10,12 @@ title: TomTom Developer Cheat Sheet
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>{{ page.title }}</title>
-	assets/styles.css
+	<link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
 	<style>
-		:root {
-				{
-				% for key,
-				cat in site.data.categories %
-			}
-
-			--c- {
-					{
-					key
-				}
-			}
-
-			: {
-					{
-					cat.color
-				}
-			}
-
-			;
-
-				{
-				% endfor %
-			}
+		:root{
+			{% for key, cat in site.data.categories %}
+			--c-{{ key }}: {{ cat.color}};
+			{% endfor %}
 		}
 	</style>
 </head>
@@ -56,7 +37,7 @@ title: TomTom Developer Cheat Sheet
 			{% comment %} CSVを読み込み（order→titleで並び替え） {% endcomment %}
 			{% assign items = site.data.links | sort: "order" | sort: "title" %}
 			{% for item in items %}
-			{{ item.url }}
+			<a href="{{ item.url }}" class="item {{ item.category }}">
 			<strong>{{ item.title }}</strong>
 			<small>{{ item.subtitle }}</small>
 			</a>
