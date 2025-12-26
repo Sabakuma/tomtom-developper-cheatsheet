@@ -10,14 +10,10 @@ title: TomTom Developer Cheat Sheet
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>{{ page.title }}</title>
-	<link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
-	<style>
-		:root{
-			{% for key, cat in site.data.categories %}
-			--c-{{ key }}: {{ cat.color}};
-			{% endfor %}
-		}
-	</style>
+	<!-- ふつうのスタイル -->
+	<link rel="stylesheet" href="assets/styles.css">
+	<!-- Liquidで生成するCSS変数（外部ファイル化） -->
+	<link rel="stylesheet" href="assets/vars.css">
 </head>
 
 <body>
@@ -34,10 +30,9 @@ title: TomTom Developer Cheat Sheet
 		</section>
 
 		<section class="honeycomb" aria-label="Cheat sheet categories">
-			{% comment %} CSVを読み込み（order→titleで並び替え） {% endcomment %}
-			{% assign items = site.data.links | sort: "order" | sort: "title" %}
+			{% assign items = site.data.links | sort: 'order' %}
 			{% for item in items %}
-			<a href="{{ item.url }}" class="item {{ item.category }}">
+			{{ item.url }}
 			<strong>{{ item.title }}</strong>
 			<small>{{ item.subtitle }}</small>
 			</a>

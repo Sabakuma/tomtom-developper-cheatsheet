@@ -1,0 +1,27 @@
+--- ---
+
+/* カテゴリ色を CSS 変数として生成 */
+:root {
+        {
+        % for key,
+        cat in site.data.categories %
+    }
+
+    --c- {
+            {
+            key
+        }
+    }
+
+    : {
+            {
+            cat.color
+        }
+    }
+
+    ;
+
+        {
+        % endfor %
+    }
+}
