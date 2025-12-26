@@ -1,6 +1,6 @@
 
 id,title,subtitle,url,category,order
-map-display,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-maps/product-information/introduction,maps,10
+マップディスプレイ,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-maps/product-information/introduction,maps,10
 routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/routing-api/documentation/tomtom-maps/product-information/introduction,routing,20
 search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/product-information/introduction,places,30
 traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-maps/product-information/introduction,traffic,40
@@ -9,3 +9,4 @@ ev-search,EV Search,"Stations + filters",https://developer.tomtom.com/ev-search-
 geocoding,Geocoding API,"Geocode / Reverse",https://developer.tomtom.com/geocoding-api/documentation/product-information/introduction,geocode,70
 geofencing,Geofencing API,"※2027/01/31 予定撤去",https://developer.tomtom.com/geofencing-api/documentation/product-information/introduction,logistics,80
 api-explorer,API Explorer,"ブラウザで試す",https://developer.tomtom.com/platform/documentation/platform-overview/the-api-explorer,tools,90
+test,test,"testapi",https://example.com,places,100
