@@ -1,32 +1,35 @@
-/* ---------- 基本カラー（ダークテーマ） ---------- */
 :root {
     --bg: #0f0f12;
-    /* 背景 */
     --fg: #e6e6e9;
-    /* 本文色 */
     --muted: #9aa0a6;
-    /* 補助テキスト */
+
+    /* category colors (CVDセーフ寄り) */
+    --c-maps: #3DB1FF;
+    --c-routing: #FF7A59;
+    --c-places: #8BDB6B;
+    --c-traffic: #F24E6E;
+    --c-ev: #54D2C4;
+    --c-geocode: #B39DDB;
+    --c-logi: #F2C94C;
+    --c-tools: #00C2FF;
 }
 
-/* ---------- リセット/ベース ---------- */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html,
 body {
-    height: 100%;
+    height: 100%
 }
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-        "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     background: var(--bg);
     color: var(--fg);
 }
 
-/* ---------- ヘッダー/フッター ---------- */
 .site-header,
 .site-footer {
     text-align: center;
@@ -34,16 +37,14 @@ body {
 }
 
 .site-header h1 {
-    margin: 0 0 8px;
-    font-weight: 700;
+    margin: 0 0 8px
 }
 
 .tagline {
     color: var(--muted);
-    margin: 0;
+    margin: 0
 }
 
-/* ---------- カテゴリ凡例（ピル） ---------- */
 .legend {
     display: flex;
     flex-wrap: wrap;
@@ -60,12 +61,42 @@ body {
     padding: 6px 10px;
     border-radius: 999px;
     background: #22252b;
-    /* 枠線色は HTML側から --accent で受け取る。未指定なら控えめグレー。 */
-    border: 1px solid var(--accent, #33363b);
+    border: 1px solid #33363b;
     color: var(--fg);
 }
 
-/* ---------- ハニカム（六角形グリッド） ---------- */
+.pill.maps {
+    border-color: var(--c-maps)
+}
+
+.pill.routing {
+    border-color: var(--c-routing)
+}
+
+.pill.places {
+    border-color: var(--c-places)
+}
+
+.pill.traffic {
+    border-color: var(--c-traffic)
+}
+
+.pill.ev {
+    border-color: var(--c-ev)
+}
+
+.pill.geocode {
+    border-color: var(--c-geocode)
+}
+
+.pill.logistics {
+    border-color: var(--c-logi)
+}
+
+.pill.tools {
+    border-color: var(--c-tools)
+}
+
 .honeycomb {
     --gap: 14px;
     display: grid;
@@ -76,7 +107,7 @@ body {
     margin: 0 auto;
 }
 
-/* 六角形カード（画像なし、clip-path） */
+/* 六角形の基本（画像なし、clip-path） */
 .hex {
     position: relative;
     padding: 16px 14px;
@@ -94,50 +125,75 @@ body {
     gap: 6px;
     min-height: 160px;
 
-    /* 六角形切り抜き */
-    clip-path: polygon(25% 0, 75% 0, 100% 50%,
-            75% 100%, 25% 100%, 0 50%);
-
+    /* 六角形に切り抜き */
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
     transition: transform .15s ease-out, box-shadow .15s ease-out;
 }
 
 .hex strong {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 16px
 }
 
 .hex small {
-    color: var(--muted);
-    font-size: 12px;
+    color: var(--muted)
 }
 
-/* カテゴリ色のアクセントリング（HTML側の --accent を使用） */
+/* カテゴリ色のアクセントリング */
 .hex::after {
     content: "";
     position: absolute;
     inset: -2px;
     clip-path: inherit;
-    border: 2px solid var(--accent, transparent);
+    border: 2px solid transparent;
     border-radius: 8px;
     pointer-events: none;
 }
 
-/* ホバー/フォーカス時の浮き上がり */
+.hex.maps::after {
+    border-color: var(--c-maps)
+}
+
+.hex.routing::after {
+    border-color: var(--c-routing)
+}
+
+.hex.places::after {
+    border-color: var(--c-places)
+}
+
+.hex.traffic::after {
+    border-color: var(--c-traffic)
+}
+
+.hex.ev::after {
+    border-color: var(--c-ev)
+}
+
+.hex.geocode::after {
+    border-color: var(--c-geocode)
+}
+
+.hex.logistics::after {
+    border-color: var(--c-logi)
+}
+
+.hex.tools::after {
+    border-color: var(--c-tools)
+}
+
 .hex:hover,
 .hex:focus {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
     outline: none;
-    /* アウトライン非表示。必要なら focus-visible で代替 */
 }
 
-/* 3列以上でハニカム“段ズレ”を演出 */
+/* 3列以上のときに“段ズレ”でハニカム感を出す */
 @media (min-width: 720px) {
     .honeycomb {
         grid-auto-rows: 1fr;
     }
 
-    /* 偶数/奇数のどちらかを軽く下げる：視覚的段ズレ */
     .hex:nth-child(odd) {
         transform: translateY(18%);
     }
@@ -147,44 +203,3 @@ body {
     }
 }
 
-/* ---------- 追加のユーティリティ（任意） ---------- */
-
-/* キーボード操作でも視認できるように（focus-visible対応） */
-.hex:focus-visible {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, .2), 0 6px 20px rgba(0, 0, 0, .35);
-}
-
-/* モバイルでのタップ領域確保（最小44px相当） */
-@media (max-width: 480px) {
-    .hex {
-        min-height: 140px;
-        padding: 14px 12px;
-    }
-
-    .pill {
-        padding: 7px 12px;
-    }
-}
-
-/* 印刷時の簡易最適化（背景を薄く） */
-@media print {
-    body {
-        background: #fff;
-        color: #000;
-    }
-
-    .hex {
-        background: #fff;
-        border-color: #ccc;
-    }
-
-    .hex::after {
-        border-color: #999;
-    }
-
-    .pill {
-        background: #fff;
-        border-color: #999;
-        color: #000;
-    }
-}

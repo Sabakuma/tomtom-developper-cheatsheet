@@ -11,6 +11,33 @@ title: TomTom Developer Cheat Sheet
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>{{ page.title }}</title>
 	<link rel="stylesheet" href="assets/styles.css">
+	<style>
+		/* Liquidでカテゴリ色をCSS変数として出力（1行1ルール） */
+		:root {
+				{
+				% for key,
+				cat in site.data.categories %
+			}
+
+			--c- {
+					{
+					key
+				}
+			}
+
+			: {
+					{
+					cat.color
+				}
+			}
+
+			;
+
+				{
+				% endfor %
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -22,16 +49,17 @@ title: TomTom Developer Cheat Sheet
 	<main>
 		<section class="legend">
 			{% for key,cat in site.data.categories %}
-			<span class="pill {{ key }}" style="--accent: {{ cat.color }};">{{ cat.label }}</span>
+			<span class="pill {{ key }}">{{ cat.label }}</span>
 			{% endfor %}
 		</section>
 
 		<section class="honeycomb" aria-label="Cheat sheet categories">
+			{% comment %} 並び順：order優先 {% endcomment %}
 			{% assign items = site.data.links | sort: 'order' %}
 			{% for item in items %}
-			{{ item.url }}
-			<strong>{{ item.title }}</strong>
-			<small>{{ item.subtitle }}</small>
+			<a class="hex {{ item.category }}" href="{{ item.url }}" target="_blank" rel="noopener">
+				<strong>{{ item.title }}</strong>
+				<small>{{ item.subtitle }}</small>
 			</a>
 			{% endfor %}
 		</section>
@@ -43,4 +71,3 @@ title: TomTom Developer Cheat Sheet
 </body>
 
 </html>
-``
