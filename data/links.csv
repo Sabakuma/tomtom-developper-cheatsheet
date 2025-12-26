@@ -1,6 +1,6 @@
 
 id,title,subtitle,url,category,order
-マップディスプレイ,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-maps/product-information/introduction,maps,10
+ディスプレイ,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-maps/product-information/introduction,maps,10
 routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/routing-api/documentation/tomtom-maps/product-information/introduction,routing,20
 search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/product-information/introduction,places,30
 traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-maps/product-information/introduction,traffic,40
