@@ -10,10 +10,7 @@ title: TomTom Developer Cheat Sheet
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>{{ page.title }}</title>
-	<!-- ふつうのスタイル -->
 	<link rel="stylesheet" href="assets/styles.css">
-	<!-- Liquidで生成するCSS変数（外部ファイル化） -->
-	<link rel="stylesheet" href="assets/vars.css">
 </head>
 
 <body>
@@ -25,7 +22,7 @@ title: TomTom Developer Cheat Sheet
 	<main>
 		<section class="legend">
 			{% for key,cat in site.data.categories %}
-			<span class="pill {{ key }}">{{ cat.label }}</span>
+			<span class="pill {{ key }}" style="--accent: {{ cat.color }};">{{ cat.label }}</span>
 			{% endfor %}
 		</section>
 
@@ -46,3 +43,4 @@ title: TomTom Developer Cheat Sheet
 </body>
 
 </html>
+``
