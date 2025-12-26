@@ -1,8 +1,20 @@
-maps: { label: "Maps", color: "#3DB1FF" }
-routing: { label: "Routing", color: "#FF7A59" }
-places: { label: "Search/Places", color: "#8BDB6B" }
-traffic: { label: "Traffic", color: "#F24E6E" }
-ev: { label: "EV", color: "#54D2C4" }
-geocode: { label: "Geocoding", color: "#B39DDB" }
-logistics: { label: "Logistics", color: "#F2C94C" }
-tools: { label: "Tools", color: "#00C2FF" }
+maps: { label: "Maps", color: "#3DB1FF", description: "Map Display / Styles" }
+routing:
+  {
+    label: "Routing",
+    color: "#FF7A59",
+    description: "Routes / Isochrones / Batch",
+  }
+places:
+  {
+    label: "Search/Places",
+    color: "#8BDB6B",
+    description: "Fuzzy / Autocomplete",
+  }
+traffic: { label: "Traffic", color: "#F24E6E", description: "Flow / Incidents" }
+ev: { label: "EV", color: "#54D2C4", description: "EV Search / Availability" }
+geocode:
+  { label: "Geocoding", color: "#B39DDB", description: "Geocode / Reverse" }
+logistics:
+  { label: "Logistics", color: "#F2C94C", description: "Geofencing / History" }
+tools: { label: "Tools", color: "#00C2FF", description: "API Explorer" }

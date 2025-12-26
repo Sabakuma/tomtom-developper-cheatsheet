@@ -10,31 +10,60 @@ title: TomTom Developer Cheat Sheet
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>{{ page.title }}</title>
-	<link rel="stylesheet" href="assets/styles.css" />
+	assets/styles.css
 </head>
 
 <body>
 	<header class="site-header">
 		<h1>{{ page.title }}</h1>
-		<p class="tagline">よく使うAPIとドキュメントの最短リンク集</p>
+		<p class="tagline">カテゴリ別・チートシート（大六角の中に小六角）</p>
 	</header>
 
 	<main>
 		<section class="legend">
+			{% comment %} 凡例（カテゴリピル） {% endcomment %}
 			{% for pair in site.data.categories %}
 			{% assign key = pair[0] %}
 			{% assign cat = pair[1] %}
-			<span class="pill {{ key }}">{{ cat.label }}</span>
+			<span class="pill" style="--accent: {{ cat.color }};">{{ cat.label }}</span>
 			{% endfor %}
 		</section>
 
-		<section class="honeycomb" aria-label="Cheat sheet categories">
-			{% assign items = site.data.links | sort: 'order' %}
-			{% for item in items %}
-			<a class="hex {{ item.category }}" href="{{ item.url }}" target="_blank" rel="noopener">
-				<strong>{{ item.title }}</strong>
-				<small>{{ item.subtitle }}</small>
-			</a>
+		<section class="category-grid" aria-label="カテゴリごとの六角形コンテナ">
+			{% comment %}
+			categories.yml は YAMLのハッシュ（key→{label,color}）
+			Liquidの仕様上、forは1変数で受けて pair[0]=key / pair[1]=value を取り出す
+			{% endcomment %}
+			{% for pair in site.data.categories %}
+			{% assign key = pair[0] %}
+			{% assign cat = pair[1] %}
+
+			{% comment %}
+			該当カテゴリのリンクをフィルタ：
+			site.data.links（CSV配列）から category==key のみ抽出
+			{% endcomment %}
+			{% assign filtered = site.data.links | where: "category", key | sort: "order" %}
+
+			<article class="cat-hex" style="--accent: {{ cat.color }};">
+				<div class="cat-hex__header">
+					<h2 class="cat-hex__title">{{ cat.label }}</h2>
+					<!-- 説明文を追加したい場合は categories.yml に description: を足して下行のコメントアウトを外す -->
+					{%- comment -%}
+					<p class="cat-hex__desc">{{ cat.description }}</p>
+					{%- endcomment -%}
+				</div>
+
+				<div class="cat-hex__body">
+					<div class="inner-honeycomb">
+						{% for item in filtered %}
+						{{ item.url }}
+						<strong>{{ item.title }}</strong>
+						<small>{{ item.subtitle }}</small>
+						</a>
+						{% endfor %}
+					</div>
+				</div>
+			</article>
 			{% endfor %}
 		</section>
 	</main>
@@ -45,4 +74,3 @@ title: TomTom Developer Cheat Sheet
 </body>
 
 </html>
-``
