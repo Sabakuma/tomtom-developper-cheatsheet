@@ -1,0 +1,205 @@
+:root {
+    --bg: #0f0f12;
+    --fg: #e6e6e9;
+    --muted: #9aa0a6;
+
+    /* category colors (CVDセーフ寄り) */
+    --c-maps: #3DB1FF;
+    --c-routing: #FF7A59;
+    --c-places: #8BDB6B;
+    --c-traffic: #F24E6E;
+    --c-ev: #54D2C4;
+    --c-geocode: #B39DDB;
+    --c-logi: #F2C94C;
+    --c-tools: #00C2FF;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+.site-header,
+.site-footer {
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.site-header h1 {
+    margin: 0 0 8px
+}
+
+.tagline {
+    color: var(--muted);
+    margin: 0
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    justify-content: center;
+    margin: 8px auto 20px;
+    padding: 0 12px;
+}
+
+.pill {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #22252b;
+    border: 1px solid #33363b;
+    color: var(--fg);
+}
+
+.pill.maps {
+    border-color: var(--c-maps)
+}
+
+.pill.routing {
+    border-color: var(--c-routing)
+}
+
+.pill.places {
+    border-color: var(--c-places)
+}
+
+.pill.traffic {
+    border-color: var(--c-traffic)
+}
+
+.pill.ev {
+    border-color: var(--c-ev)
+}
+
+.pill.geocode {
+    border-color: var(--c-geocode)
+}
+
+.pill.logistics {
+    border-color: var(--c-logi)
+}
+
+.pill.tools {
+    border-color: var(--c-tools)
+}
+
+.honeycomb {
+    --gap: 14px;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 10px 16px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 六角形の基本（画像なし、clip-path） */
+.hex {
+    position: relative;
+    padding: 16px 14px;
+    text-decoration: none;
+    color: var(--fg);
+    background: #1a1d22;
+    border: 1px solid #2a2f35;
+    border-radius: 6px;
+    /* 角のチラつき防止 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    min-height: 160px;
+
+    /* 六角形に切り抜き */
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    transition: transform .15s ease-out, box-shadow .15s ease-out;
+}
+
+.hex strong {
+    font-size: 16px
+}
+
+.hex small {
+    color: var(--muted)
+}
+
+/* カテゴリ色のアクセントリング */
+.hex::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    clip-path: inherit;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.hex.maps::after {
+    border-color: var(--c-maps)
+}
+
+.hex.routing::after {
+    border-color: var(--c-routing)
+}
+
+.hex.places::after {
+    border-color: var(--c-places)
+}
+
+.hex.traffic::after {
+    border-color: var(--c-traffic)
+}
+
+.hex.ev::after {
+    border-color: var(--c-ev)
+}
+
+.hex.geocode::after {
+    border-color: var(--c-geocode)
+}
+
+.hex.logistics::after {
+    border-color: var(--c-logi)
+}
+
+.hex.tools::after {
+    border-color: var(--c-tools)
+}
+
+.hex:hover,
+.hex:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+    outline: none;
+}
+
+/* 3列以上のときに“段ズレ”でハニカム感を出す */
+@media (min-width: 720px) {
+    .honeycomb {
+        grid-auto-rows: 1fr;
+    }
+
+    .hex:nth-child(odd) {
+        transform: translateY(18%);
+    }
+
+    .hex:nth-child(odd):hover {
+        transform: translateY(calc(18% - 2px));
+    }
+}
+
