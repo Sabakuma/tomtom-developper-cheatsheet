@@ -1,105 +1,66 @@
+---
+layout: none
+title: TomTom Developer Cheat Sheet
+---
+
 <!doctype html>
 <html lang="ja">
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>TomTom Developer Cheat Sheet</title>
-	<link rel="stylesheet" href="assets/styles.css" />
+	<title>{{ page.title }}</title>
+	assets/styles.css
+	<style>
+		:root {
+				{
+				% for key,
+				cat in site.data.categories %
+			}
+
+			--c- {
+					{
+					key
+				}
+			}
+
+			: {
+					{
+					cat.color
+				}
+			}
+
+			;
+
+				{
+				% endfor %
+			}
+		}
+	</style>
 </head>
 
 <body>
 	<header class="site-header">
-		<h1>TomTom Developer Cheat Sheet</h1>
+		<h1>{{ page.title }}</h1>
 		<p class="tagline">よく使うAPIとドキュメントの最短リンク集</p>
 	</header>
 
 	<main>
 		<section class="legend">
-			<span class="pill maps">Maps</span>
-			<span class="pill routing">Routing</span>
-			<span class="pill places">Search/Places</span>
-			<span class="pill traffic">Traffic</span>
-			<span class="pill ev">EV</span>
-			<span class="pill geocode">Geocoding</span>
-			<span class="pill logistics">Logistics</span>
-			<span class="pill tools">Tools</span>
+			{% for key,cat in site.data.categories %}
+			<span class="pill {{ key }}">{{ cat.label }}</span>
+			{% endfor %}
 		</section>
 
 		<section class="honeycomb" aria-label="Cheat sheet categories">
-			<!-- Maps -->
-			<a class="hex maps"
-				href="https://developer.tomtom.com/map-display-api/documentation/tomtom-maps/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>Map Display API</strong>
-				<small>Raster / Vector / Styles</small>
+			{% comment %} CSVを読み込み（order→titleで並び替え） {% endcomment %}
+			{% assign items = site.data.links | sort: "order" | sort: "title" %}
+			{% for item in items %}
+			{{ item.url }}
+			<strong>{{ item.title }}</strong>
+			<small>{{ item.subtitle }}</small>
 			</a>
-
-			<!-- Routing -->
-			<a class="hex routing"
-				href="https://developer.tomtom.com/routing-api/documentation/tomtom-maps/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>Routing API</strong>
-				<small>Routes / Isochrones / Batch</small>
-			</a>
-
-			<!-- Search / Places -->
-			<a class="hex places"
-				href="https://developer.tomtom.com/search-api/documentation/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>Search API</strong>
-				<small>Fuzzy / Autocomplete</small>
-			</a>
-
-			<!-- Traffic -->
-			<a class="hex traffic"
-				href="https://developer.tomtom.com/traffic-api/documentation/tomtom-maps/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>Traffic API</strong>
-				<small>Flow / Incidents</small>
-			</a>
-
-			<!-- EV -->
-			<a class="hex ev"
-				href="https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>EV Availability</strong>
-				<small>Charging status</small>
-			</a>
-			<a class="hex ev"
-				href="https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>EV Search</strong>
-				<small>Stations + filters</small>
-			</a>
-
-			<!-- Geocoding -->
-			<a class="hex geocode"
-				href="https://developer.tomtom.com/geocoding-api/documentation/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>Geocoding API</strong>
-				<small>Geocode / Reverse</small>
-			</a>
-
-			<!-- Logistics & Tracking -->
-			<a class="hex logistics" href="https://developer.tomtom.com/documentation" target="_blank" rel="noopener">
-				<strong>Tracking & Logistics</strong>
-				<small>Geofencing / Location History 等</small>
-			</a>
-			<a class="hex logistics"
-				href="https://developer.tomtom.com/geofencing-api/documentation/product-information/introduction"
-				target="_blank" rel="noopener">
-				<strong>Geofencing API</strong>
-				<small>※2027/01/31 予定撤去</small>
-			</a>
-
-			<!-- Tools -->
-			<a class="hex tools"
-				href="https://developer.tomtom.com/platform/documentation/platform-overview/the-api-explorer"
-				target="_blank" rel="noopener">
-				<strong>API Explorer</strong>
-				<small>ブラウザで試す</small>
-			</a>
+			{% endfor %}
 		</section>
 	</main>
 
