@@ -1,9 +1,7 @@
 maps: { label: "Maps", color: "#3DB1FF" }
 routing: { label: "Routing", color: "#FF7A59" }
 places: { label: "Search/Places", color: "#8BDB6B" }
-live traffic: { label: "Live Traffic", color: "#F24E6E" }
-historical traffic: { label: "Historical Traffic", color: "#9E9E9E" }
+live_traffic: { label: "Live Traffic", color: "#F24E6E" }
+historical_traffic: { label: "Historical Traffic", color: "#9E9E9E" }
 ev: { label: "EV", color: "#54D2C4" }
 geocode: { label: "Geocoding", color: "#B39DDB" }
-sdk&app: { label: "SDK&App", color: "#F2C94C" }
-tools: { label: "Tools", color: "#00C2FF" }
