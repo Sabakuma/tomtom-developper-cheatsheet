@@ -1,17 +1,24 @@
 :root {
+    /* ベースカラー */
     --bg: #0f0f12;
     --fg: #e6e6e9;
     --muted: #9aa0a6;
 
-    /* category colors (CVDセーフ寄り) */
+    /* カテゴリカラー（YAML準拠） */
     --c-maps: #3DB1FF;
+    /* Maps */
     --c-routing: #FF7A59;
+    /* Routing */
     --c-places: #8BDB6B;
-    --c-traffic: #F24E6E;
+    /* Search/Places */
+    --c-livetraffic: #F24E6E;
+    /* Live Traffic */
+    --c-historicaltraffic: #9E9E9E;
+    /* Historical Traffic */
     --c-ev: #54D2C4;
+    /* EV */
     --c-geocode: #B39DDB;
-    --c-logi: #F2C94C;
-    --c-tools: #00C2FF;
+    /* Geocoding */
 }
 
 * {
