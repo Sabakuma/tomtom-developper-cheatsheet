@@ -72,36 +72,33 @@ body {
     color: var(--fg);
 }
 
+/* 凡例の枠色（カテゴリごと） */
 .pill.maps {
-    border-color: var(--c-maps)
+    border-color: var(--c-maps);
 }
 
 .pill.routing {
-    border-color: var(--c-routing)
+    border-color: var(--c-routing);
 }
 
 .pill.places {
-    border-color: var(--c-places)
+    border-color: var(--c-places);
 }
 
-.pill.traffic {
-    border-color: var(--c-traffic)
+.pill.livetraffic {
+    border-color: var(--c-livetraffic);
+}
+
+.pill.historicaltraffic {
+    border-color: var(--c-historicaltraffic);
 }
 
 .pill.ev {
-    border-color: var(--c-ev)
+    border-color: var(--c-ev);
 }
 
 .pill.geocode {
-    border-color: var(--c-geocode)
-}
-
-.pill.logistics {
-    border-color: var(--c-logi)
-}
-
-.pill.tools {
-    border-color: var(--c-tools)
+    border-color: var(--c-geocode);
 }
 
 .honeycomb {
@@ -123,7 +120,6 @@ body {
     background: #1a1d22;
     border: 3px solid #2a2f35;
     border-radius: 6px;
-    /* 角のチラつき防止 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,7 +141,7 @@ body {
     color: var(--muted)
 }
 
-/* カテゴリ色のアクセントリング */
+/* カテゴリ色のアクセントリング（外枠） */
 .hex::after {
     content: "";
     position: absolute;
@@ -157,35 +153,31 @@ body {
 }
 
 .hex.maps::after {
-    border-color: var(--c-maps)
+    border-color: var(--c-maps);
 }
 
 .hex.routing::after {
-    border-color: var(--c-routing)
+    border-color: var(--c-routing);
 }
 
 .hex.places::after {
-    border-color: var(--c-places)
+    border-color: var(--c-places);
 }
 
-.hex.traffic::after {
-    border-color: var(--c-traffic)
+.hex.livetraffic::after {
+    border-color: var(--c-livetraffic);
+}
+
+.hex.historicaltraffic::after {
+    border-color: var(--c-historicaltraffic);
 }
 
 .hex.ev::after {
-    border-color: var(--c-ev)
+    border-color: var(--c-ev);
 }
 
 .hex.geocode::after {
-    border-color: var(--c-geocode)
-}
-
-.hex.logistics::after {
-    border-color: var(--c-logi)
-}
-
-.hex.tools::after {
-    border-color: var(--c-tools)
+    border-color: var(--c-geocode);
 }
 
 .hex:hover,
@@ -209,4 +201,3 @@ body {
         transform: translateY(calc(18% - 2px));
     }
 }
-
