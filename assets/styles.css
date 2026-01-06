@@ -114,7 +114,7 @@ body {
     text-decoration: none;
     color: var(--fg);
     background: #1a1d22;
-    border: 1px solid #2a2f35;
+    border: 3px solid #2a2f35;
     border-radius: 6px;
     /* 角のチラつき防止 */
     display: flex;
