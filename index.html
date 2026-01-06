@@ -10,7 +10,7 @@ title: TomTom Developer Cheat Sheet
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>{{ page.title }}</title>
-	<link rel="stylesheet" href="assets/styles.css" />
+	<link rel="stylesheet" href="assets/styles.css?v=20260106a" />
 </head>
 
 <body>
@@ -20,43 +20,48 @@ title: TomTom Developer Cheat Sheet
 	</header>
 
 	<main>
-		<section class="honeycomb-list" aria-label="Cheat sheet categories">
-			{%- comment -%}
-			カテゴリ境界を検出して、カテゴリが変わるたびに新しい .honeycomb セクションを開始。
-			まず category でソートして境界を揃える（カテゴリ内の順番は元データ順）。
-			カテゴリ内も order で並べたい場合は、categories ループ版に変更してください。
-			{%- endcomment -%}
-			{% assign items = site.data.links | sort: 'category' %}
-			{% assign current = '' %}
-			{% for item in items %}
-			{% assign cat = item.category %}
-
-			{%- if cat != current -%}
-			{%- if forloop.index != 1 -%}
+		<!-- 凡例 -->
+		<section class="legend">
+			{% for pair in site.data.categories %}
+			{% assign key = pair[0] %}
+			{% assign cat = pair[1] %}
+			{% assign norm = key | downcase | replace: ' ', '' | replace: '_', '' | replace: '-', '' %}
+			<span class="pill {{ norm }}">{{ cat.label }}</span>
+			{% endfor %}
 		</section>
-		{%- endif -%}
-		<section class="honeycomb group {{ cat }}" aria-label="{{ cat }}">
-			{% assign current = cat %}
-			{%- endif -%}
 
-			<a class="hex {{ cat }}" href="{{ item.url }}" target="_blank" rel="noopener">
-				<strong>{{ item.title }}</strong>
-				<small>{{ item.subtitle }}</small>
-			</a>
+		<!-- カテゴリごとのブロック（カテゴリ順 = categories.yml の順） -->
+		{% for pair in site.data.categories %}
+		{% assign key = pair[0] %}
+		{% assign cat = pair[1] %}
+		{% assign norm = key | downcase | replace: ' ', '' | replace: '_', '' | replace: '-', '' %}
+		{% assign group = site.data.links | where: "category", key | sort: "order" %}
+		{% if group.size > 0 %}
+		<section class="category-section">
+			<h2 class="category-title">
+				<span class="pill {{ norm }}">{{ cat.label }}</span>
+			</h2>
 
-			{%- if forloop.last -%}
+			<section class="honeycomb group {{ norm }}" aria-label="{{ cat.label }}">
+				{% for item in group %}
+				{% assign normCat = item.category | downcase | replace: ' ', '' | replace: '_', '' | replace: '-', '' %}
+				<a class="hex {{ normCat }}" href="{{ item.url }}" target="_blank" rel="noopener">
+					<div class="hex-content">
+						<strong>{{ item.title }}</strong>
+						<small>{{ item.subtitle }}</small>
+					</div>
+				</a>
+				{% endfor %}
+			</section>
 		</section>
-		{%- endif -%}
+		{% endif %}
 		{% endfor %}
-		</section>
 	</main>
 
 	<footer class="site-footer">
 		<p>© Ash Nagao — GitHub Pages hosted.</p>
-		<p>This site is independently operated and is not an official TomTom website
-		TomTom documentation.</p>
+		<p>This site is independently operated and is not an official TomTom website.</p>
 	</footer>
 </body>
 
 </html>
-``

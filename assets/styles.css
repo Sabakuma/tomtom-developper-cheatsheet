@@ -44,14 +44,15 @@ body {
 }
 
 .site-header h1 {
-    margin: 0 0 8px
+    margin: 0 0 8px;
 }
 
 .tagline {
     color: var(--muted);
-    margin: 0
+    margin: 0;
 }
 
+/* 凡例（Legend） */
 .legend {
     display: flex;
     flex-wrap: wrap;
@@ -101,44 +102,79 @@ body {
     border-color: var(--c-geocode);
 }
 
+/* カテゴリセクションのレイアウト */
+.category-section {
+    margin: 24px auto;
+    max-width: 1200px;
+    padding: 0 16px;
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* グリッド（中央寄せ・固定列幅） */
 .honeycomb {
     --gap: 14px;
     display: grid;
     gap: var(--gap);
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    padding: 10px 16px 40px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, 180px);
+    /* 各セルの幅 */
+    justify-content: center;
+    /* グリッド全体を中央寄せ */
+    justify-items: center;
+    /* 各セルの内容も中央に */
+    padding: 10px 0 28px;
     margin: 0 auto;
 }
 
-/* 六角形の基本（画像なし、clip-path） */
+/* 六角形（正六角形の比率を固定） */
 .hex {
     position: relative;
-    padding: 16px 14px;
+    width: 180px;
+    /* 横幅を固定 */
+    aspect-ratio: 1 / 0.866;
+    /* 正六角形（pointy-top）: h = w * √3/2 ≈ 0.866w */
     text-decoration: none;
     color: var(--fg);
     background: #1a1d22;
     border: 3px solid #2a2f35;
     border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    display: grid;
+    place-items: center;
+    /* 中央揃え */
     text-align: center;
-    gap: 6px;
-    min-height: 160px;
+    padding: 0;
+    /* 形状維持のため padding は内側ラッパへ */
 
     /* 六角形に切り抜き */
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
     transition: transform .15s ease-out, box-shadow .15s ease-out;
 }
 
+/* 内側ラッパ（テキストが外形を広げないように） */
+.hex-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 14px;
+    /* 旧 .hex の padding を移動 */
+    max-width: 90%;
+}
+
 .hex strong {
-    font-size: 16px
+    font-size: 16px;
 }
 
 .hex small {
-    color: var(--muted)
+    color: var(--muted);
 }
 
 /* カテゴリ色のアクセントリング（外枠） */
@@ -152,6 +188,7 @@ body {
     pointer-events: none;
 }
 
+/* カテゴリ別のリング色 */
 .hex.maps::after {
     border-color: var(--c-maps);
 }
@@ -180,6 +217,7 @@ body {
     border-color: var(--c-geocode);
 }
 
+/* ホバー効果 */
 .hex:hover,
 .hex:focus {
     transform: translateY(-2px);
@@ -187,12 +225,8 @@ body {
     outline: none;
 }
 
-/* 3列以上のときに“段ズレ”でハニカム感を出す */
+/* 段ズレ演出（任意。要らなければ削除） */
 @media (min-width: 720px) {
-    .honeycomb {
-        grid-auto-rows: 1fr;
-    }
-
     .hex:nth-child(odd) {
         transform: translateY(18%);
     }
@@ -200,21 +234,4 @@ body {
     .hex:nth-child(odd):hover {
         transform: translateY(calc(18% - 2px));
     }
-}
-
-/* カテゴリセクションの余白 */
-.category-section {
-    margin: 24px auto;
-    max-width: 1200px;
-    padding: 0 16px;
-}
-
-/* カテゴリ見出し（pillの行） */
-.category-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0 0 12px;
-    font-size: 14px;
-    color: var(--muted);
 }
