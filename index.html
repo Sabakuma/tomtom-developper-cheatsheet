@@ -20,42 +20,34 @@ title: TomTom Developer Cheat Sheet
 	</header>
 
 	<main>
-		<section class="legend">
-			{% for pair in site.data.categories %}
-			{% assign key = pair[0] %}
-			{% assign cat = pair[1] %}
-			<span class="pill {{ key }}">{{ cat.label }}</span>
-			{% endfor %}
-		</section>
-
 		<section class="honeycomb-list" aria-label="Cheat sheet categories">
 			{%- comment -%}
 			カテゴリ境界を検出して、カテゴリが変わるたびに新しい .honeycomb セクションを開始。
-			まず category でソートして境界を揃える。各カテゴリ内の order は後で調整する場合は
-			categories のループ版に変更してください（この版は最小変更優先）。
+			まず category でソートして境界を揃える（カテゴリ内の順番は元データ順）。
+			カテゴリ内も order で並べたい場合は、categories ループ版に変更してください。
 			{%- endcomment -%}
 			{% assign items = site.data.links | sort: 'category' %}
 			{% assign current = '' %}
 			{% for item in items %}
-				{% assign cat = item.category %}
+			{% assign cat = item.category %}
 
 			{%- if cat != current -%}
-				{%- if forloop.index != 1 -%}
-					</section>
-				{%- endif -%}
-				<section class="honeycomb group {{ cat }}" aria-label="{{ cat }}">
-				{% assign current = cat %}
+			{%- if forloop.index != 1 -%}
+		</section>
+		{%- endif -%}
+		<section class="honeycomb group {{ cat }}" aria-label="{{ cat }}">
+			{% assign current = cat %}
 			{%- endif -%}
 
-			{{ item.url }}
+			<a class="hex {{ cat }}" href="{{ item.url }}" target="_blank" rel="noopener">
 				<strong>{{ item.title }}</strong>
 				<small>{{ item.subtitle }}</small>
 			</a>
 
 			{%- if forloop.last -%}
-				</section>
-			{%- endif -%}
-			{% endfor %}
+		</section>
+		{%- endif -%}
+		{% endfor %}
 		</section>
 	</main>
 
