@@ -1,14 +1,24 @@
 id,title,subtitle,url,category,order
 map-display,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-orbis-maps/product-information/introduction,maps,10
+map-feedback,Map Feedback API,"Report map issues",https://developer.tomtom.com/map-feedback-api/documentation/product-information/introduction,maps,11
+maps-sdk-android,Maps SDK for Android,"Native maps for Android",https://developer.tomtom.com/maps/android/introduction/introduction,maps,12
+maps-sdk-ios,Maps SDK for iOS,"Native maps for iOS",https://developer.tomtom.com/maps/ios/introduction/introduction,maps,13
+map-maker,Map Maker,"Map design tool",https://developer.tomtom.com/map-maker/documentation/overview/introduction,maps,14
 routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/routing-api/documentation/tomtom-orbis-maps/v2/routing-service,routing,20
+long-distance-ev-routing,Long Distance EV Routing API,"EV optimized routes",https://developer.tomtom.com/long-distance-ev-routing-api/documentation/tomtom-maps/product-information/introduction,routing,21
+matrix-routing,Matrix Routing API,"Distance / Time matrix",https://developer.tomtom.com/matrix-routing-v2-api/documentation/product-information/introduction,routing,22
+waypoint-optimization,Waypoint Optimization API,"Optimize multiple stops",https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization-service,routing,23
 search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/tomtom-orbis-maps/product-information/introduction,places,30
+batch-search,Batch Search API,"Bulk geocoding / places",https://developer.tomtom.com/batch-search-api/documentation/product-information/introduction,places,31
+ev-search,EV Search,"Stations + filters",https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction,places,32
+ev-availability,EV Availability,"Charging status",https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/tomtom-orbis-maps/product-information/introduction,places,33
 traffic,Traffic API,"Flow tiles / Incidents tiles",https://developer.tomtom.com/traffic-api/documentation/tomtom-orbis-maps/product-information/introduction,livetraffic,40
 intermediate-traffic,Intermediate Traffic API,"Flow Protbuf / Incidents DATEXII",https://developer.tomtom.com/intermediate-traffic-service/documentation/tomtom-orbis-maps/product-information/introduction,livetraffic,41
 juncition-analytics,Junction Analytics API,"Junction analytics",https://developer.tomtom.com/junction-analytics/documentation/product-information/introduction,livetraffic,42
 route-monitoring,Route Monitoring API,"Route progress / Deviations",https://developer.tomtom.com/route-monitoring/documentation/product-information/introduction,livetraffic,43
-od-analytics,OD Analytics API,"Origin-Destination analytics",https://developer.tomtom.com/od-analysis/documentation/product-information/introduction,historicaltraffic,44
-area-analytics,Area Analytics API,"Area analytics",https://developer.tomtom.com/area-analytics/documentation/product-information/introduction,historicaltraffic,45
-traffic-stats,Traffic Stats API,"Historical traffic analytics data",https://developer.tomtom.com/traffic-stats/documentation/product-information/introduction,historicaltraffic,46
-ev-availability,EV Availability,"Charging status",https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/tomtom-orbis-maps/product-information/introduction,ev,50
-ev-search,EV Search,"Stations + filters",https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction,ev,51
-geocoding,Geocoding API,"Geocode / Reverse",https://developer.tomtom.com/geocoding-api/documentation/tomtom-orbis-maps/product-information/introduction,geocode,60
+od-analytics,OD Analytics API,"Origin-Destination analytics",https://developer.tomtom.com/od-analysis/documentation/product-information/introduction,historicaltraffic,50
+area-analytics,Area Analytics API,"Area analytics",https://developer.tomtom.com/area-analytics/documentation/product-information/introduction,historicaltraffic,51
+traffic-stats,Traffic Stats API,"Historical traffic analytics data",https://developer.tomtom.com/traffic-stats/documentation/product-information/introduction,historicaltraffic,52
+geocoding,Geocoding API,"Geocode",https://developer.tomtom.com/geocoding-api/documentation/tomtom-orbis-maps/product-information/introduction,geocode,60
+reveerse-geocoding,Reverse Geocoding API,"Reverse geocoding",https://developer.tomtom.com/reverse-geocoding-api/documentation/tomtom-orbis-maps/product-information/introduction,geocode,61
+premium-geocoding,Premium Geocoding API,"High volume geocoding",https://developer.tomtom.com/premium-geocoding-api/documentation/product-information/introduction,geocode,62
