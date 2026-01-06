@@ -1,5 +1,5 @@
 maps: { label: "Maps", color: "#3DB1FF" }
-routing: { label: "Routing", color: "#FF7A59" }
+routing: { label: "Routing/Navigation", color: "#FF7A59" }
 places: { label: "Search/Places", color: "#8BDB6B" }
 livetraffic: { label: "Live Traffic", color: "#F24E6E" }
 historicaltraffic: { label: "Historical Traffic", color: "#9E9E9E" }

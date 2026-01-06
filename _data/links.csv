@@ -8,6 +8,8 @@ routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/r
 long-distance-ev-routing,Long Distance EV Routing API,"EV optimized routes",https://developer.tomtom.com/long-distance-ev-routing-api/documentation/tomtom-maps/product-information/introduction,routing,21
 matrix-routing,Matrix Routing API,"Distance / Time matrix",https://developer.tomtom.com/matrix-routing-v2-api/documentation/product-information/introduction,routing,22
 waypoint-optimization,Waypoint Optimization API,"Optimize multiple stops",https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization-service,routing,23
+navigation-sdk-android,Navigation SDK for Android,"Turn-by-turn navigation",https://developer.tomtom.com/navigation/android/introduction/introduction,routing,24
+navigation-sdk-ios,Navigation SDK for iOS,"Turn-by-turn navigation",https://developer.tomtom.com/navigation/ios/introduction/introduction,routing,25
 search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/tomtom-orbis-maps/product-information/introduction,places,30
 batch-search,Batch Search API,"Bulk geocoding / places",https://developer.tomtom.com/batch-search-api/documentation/product-information/introduction,places,31
 ev-search,EV Search,"Stations + filters",https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction,places,32
