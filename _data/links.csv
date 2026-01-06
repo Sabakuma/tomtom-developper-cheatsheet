@@ -1,8 +1,14 @@
 id,title,subtitle,url,category,order
+traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-orbis-maps/product-information/introduction,live_traffic,40
+intermediate-traffic,Intermediate Traffic API,"Flow Protbuf / Incidents DATEXII",https://developer.tomtom.com/intermediate-traffic-service/documentation/tomtom-orbis-maps/product-information/introduction,live_traffic,41
+area-analytics,Area Analytics API,"Area analytics",https://developer.tomtom.com/area-analytics/documentation/product-information/introduction,historical_traffic,42
+juncition-analytics,Junction Analytics API,"Junction analytics",https://developer.tomtom.com/junction-analytics/documentation/product-information/introduction,live_traffic,43
+od-analytics,OD Analytics API,"Origin-Destination analytics",https://developer.tomtom.com/od-analysis/documentation/product-information/introduction,historical_traffic,44
+route-monitoring,Route Monitoring API,"Route progress / Deviations",https://developer.tomtom.com/route-monitoring/documentation/product-information/introduction,live_traffic,45
+traffic-stats,Traffic Stats API,"Historical traffic analytics data",https://developer.tomtom.com/traffic-stats/documentation/product-information/introduction,historical_traffic,46
 map-display,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-orbis-maps/product-information/introduction,maps,10
 routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/routing-api/documentation/tomtom-orbis-maps/v2/routing-service,routing,20
 search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/tomtom-orbis-maps/product-information/introduction,places,30
-traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-orbis-maps/product-information/introduction,traffic,40
 ev-availability,EV Availability,"Charging status",https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/tomtom-orbis-maps/product-information/introduction,ev,50
 ev-search,EV Search,"Stations + filters",https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction,ev,51
 geocoding,Geocoding API,"Geocode / Reverse",https://developer.tomtom.com/geocoding-api/documentation/tomtom-orbis-maps/product-information/introduction,geocode,60
