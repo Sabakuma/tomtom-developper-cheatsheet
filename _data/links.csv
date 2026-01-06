@@ -1,5 +1,5 @@
 id,title,subtitle,url,category,order
-traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-orbis-maps/product-information/introduction,live_traffic,40
+traffic,Traffic API,"Flow tiles / Incidents tiles",https://developer.tomtom.com/traffic-api/documentation/tomtom-orbis-maps/product-information/introduction,live_traffic,40
 intermediate-traffic,Intermediate Traffic API,"Flow Protbuf / Incidents DATEXII",https://developer.tomtom.com/intermediate-traffic-service/documentation/tomtom-orbis-maps/product-information/introduction,live_traffic,41
 area-analytics,Area Analytics API,"Area analytics",https://developer.tomtom.com/area-analytics/documentation/product-information/introduction,historical_traffic,42
 juncition-analytics,Junction Analytics API,"Junction analytics",https://developer.tomtom.com/junction-analytics/documentation/product-information/introduction,live_traffic,43
