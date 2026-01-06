@@ -20,7 +20,6 @@ title: TomTom Developer Cheat Sheet
 	</header>
 
 	<main>
-		<!-- 凡例：そのまま維持 -->
 		<section class="legend">
 			{% for pair in site.data.categories %}
 			{% assign key = pair[0] %}
@@ -29,33 +28,16 @@ title: TomTom Developer Cheat Sheet
 			{% endfor %}
 		</section>
 
-		<!-- カテゴリごとのスペース -->
-		{% for pair in site.data.categories %}
-		{% assign key = pair[0] %}
-		{% assign cat = pair[1] %}
-
-		{% assign group = site.data.links | where: "category", key | sort: "order" %}
-		{% if group.size > 0 %}
-		<section class="category-section">
-			<!-- カテゴリ見出し（ピルを再利用） -->
-			<h2 class="category-title">
-				<span class="pill {{ key }}">{{ cat.label }}</span>
-			</h2>
-
-			<!-- このカテゴリのアイテムだけを表示 -->
-			<section class="honeycomb" aria-label="{{ cat.label }} APIs">
-				{% for item in group %}
-				<a class="hex {{ item.category }}" href="{{ item.url }}" target="_blank" rel="noopener">
-					<strong>{{ item.title }}</strong>
-					<small>{{ item.subtitle }}</small>
-				</a>
-				{% endfor %}
-			</section>
+		<section class="honeycomb" aria-label="Cheat sheet categories">
+			{% assign items = site.data.links | sort: 'order' %}
+			{% for item in items %}
+			<a class="hex {{ item.category }}" href="{{ item.url }}" target="_blank" rel="noopener">
+				<strong>{{ item.title }}</strong>
+				<small>{{ item.subtitle }}</small>
+			</a>
+			{% endfor %}
 		</section>
-		{% endif %}
-		{% endfor %}
 	</main>
-
 
 	<footer class="site-footer">
 		<p>© Ash Nagao — GitHub Pages hosted.</p>
