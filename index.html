@@ -37,27 +37,26 @@ title: TomTom Developer Cheat Sheet
 			{% assign items = site.data.links | sort: 'category' %}
 			{% assign current = '' %}
 			{% for item in items %}
-			{% assign cat = item.category %}
+				{% assign cat = item.category %}
 
 			{%- if cat != current -%}
-			{%- if forloop.index != 1 -%}
-		</section>
-		{%- endif -%}
-		<section class="honeycomb group {{ cat }}" aria-label="{{ cat }}">
-			{% assign current = cat %}
+				{%- if forloop.index != 1 -%}
+					</section>
+				{%- endif -%}
+				<section class="honeycomb group {{ cat }}" aria-label="{{ cat }}">
+				{% assign current = cat %}
 			{%- endif -%}
 
 			{{ item.url }}
-			<strong>{{ item.title }}</strong>
-			<small>{{ item.subtitle }}</small>
+				<strong>{{ item.title }}</strong>
+				<small>{{ item.subtitle }}</small>
 			</a>
 
 			{%- if forloop.last -%}
+				</section>
+			{%- endif -%}
+			{% endfor %}
 		</section>
-		{%- endif -%}
-		{% endfor %}
-		</section>
-
 	</main>
 
 	<footer class="site-footer">
