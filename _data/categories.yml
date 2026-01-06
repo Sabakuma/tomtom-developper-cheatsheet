@@ -3,5 +3,4 @@ routing: { label: "Routing/Navigation", color: "#FF7A59" }
 places: { label: "Search/Places", color: "#8BDB6B" }
 livetraffic: { label: "Live Traffic", color: "#F24E6E" }
 historicaltraffic: { label: "Historical Traffic", color: "#9E9E9E" }
-ev: { label: "EV", color: "#54D2C4" }
 geocode: { label: "Geocoding", color: "#B39DDB" }
