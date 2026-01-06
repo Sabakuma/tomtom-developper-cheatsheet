@@ -1,8 +1,8 @@
 id,title,subtitle,url,category,order
-map-display,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-maps/product-information/introduction,maps,10
-routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/routing-api/documentation/tomtom-maps/product-information/introduction,routing,20
-search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/product-information/introduction,places,30
-traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-maps/product-information/introduction,traffic,40
-ev-availability,EV Availability,"Charging status",https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/product-information/introduction,ev,50
+map-display,Map Display API,"Raster / Vector / Styles",https://developer.tomtom.com/map-display-api/documentation/tomtom-orbis-maps/product-information/introduction,maps,10
+routing,Routing API,"Routes / Isochrones / Batch",https://developer.tomtom.com/routing-api/documentation/tomtom-orbis-maps/v2/routing-service,routing,20
+search,Search API,"Fuzzy / Autocomplete",https://developer.tomtom.com/search-api/documentation/tomtom-orbis-maps/product-information/introduction,places,30
+traffic,Traffic API,"Flow / Incidents",https://developer.tomtom.com/traffic-api/documentation/tomtom-orbis-maps/product-information/introduction,traffic,40
+ev-availability,EV Availability,"Charging status",https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/tomtom-orbis-maps/product-information/introduction,ev,50
 ev-search,EV Search,"Stations + filters",https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction,ev,51
-geocoding,Geocoding API,"Geocode / Reverse",https://developer.tomtom.com/geocoding-api/documentation/product-information/introduction,geocode,60
+geocoding,Geocoding API,"Geocode / Reverse",https://developer.tomtom.com/geocoding-api/documentation/tomtom-orbis-maps/product-information/introduction,geocode,60
