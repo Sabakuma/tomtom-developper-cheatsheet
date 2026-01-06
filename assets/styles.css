@@ -201,3 +201,20 @@ body {
         transform: translateY(calc(18% - 2px));
     }
 }
+
+/* カテゴリセクションの余白 */
+.category-section {
+    margin: 24px auto;
+    max-width: 1200px;
+    padding: 0 16px;
+}
+
+/* カテゴリ見出し（pillの行） */
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--muted);
+}
